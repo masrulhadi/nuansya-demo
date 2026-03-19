@@ -106,7 +106,7 @@ nav {
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   text-align: center;
-  padding: 120px 48px 80px;
+  padding: 120px 48px 100px;
   position: relative;
   overflow: hidden;
   background:
@@ -223,17 +223,7 @@ nav {
 }
 .btn-secondary:hover { gap: 10px; }
 
-.hero-scroll {
-  position: absolute; bottom: 40px;
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  animation: bounce 2s infinite;
-  color: var(--teks-abu); font-size: 11px;
-  letter-spacing: 1px; text-transform: uppercase;
-}
-.scroll-line {
-  width: 1px; height: 40px;
-  background: linear-gradient(to bottom, var(--emas), transparent);
-}
+
 
 /* ══════════════════════════════════
    PROBLEM SECTION
@@ -1078,10 +1068,7 @@ nav {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -1107,13 +1094,135 @@ nav {
 /* ══════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════ */
-@media (max-width: 768px) {
-  nav { padding: 14px 20px; }
+/* ══════════════════════════════════
+   RESPONSIVE — TABLET (max 900px)
+══════════════════════════════════ */
+@media (max-width: 900px) {
+  nav { padding: 14px 24px; }
   .nav-links { display: none; }
-  #hero { padding: 100px 24px 60px; }
-  .hero-stats { gap: 24px; }
-  .problem-grid, .eco-platforms, .ai-demo-grid, .transparansi-grid { grid-template-columns: 1fr; gap: 40px; }
-  #problem, #ecosystem, #alur, #ai-demo, #transparansi, #roadmap, #closing { padding: 60px 24px; }
+
+  .problem-grid { grid-template-columns: 1fr; gap: 48px; }
+  .ai-demo-grid { grid-template-columns: 1fr; gap: 48px; }
+  .transparansi-grid { grid-template-columns: 1fr; gap: 48px; }
+
+  .eco-platforms { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE — MOBILE (max 640px)
+══════════════════════════════════ */
+@media (max-width: 640px) {
+  /* NAV */
+  nav { padding: 12px 16px; }
+  .nav-logo-sub { display: none; }
+  .nav-badge { font-size: 10px; padding: 5px 10px; }
+
+  /* HERO */
+  #hero { padding: 88px 20px 60px; }
+  .hero-eyebrow { font-size: 10px; padding: 5px 12px; }
+  .hero-title { font-size: 52px; }
+  .hero-subtitle { font-size: 11px; letter-spacing: 1.5px; }
+  .hero-tagline { font-size: 15px; }
+  .hero-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: center;
+    width: 100%;
+    background: rgba(27,107,58,0.05);
+    border-radius: 12px;
+    padding: 16px 8px;
+  }
+  .hero-stat {
+    flex: 1;
+    min-width: 80px;
+    padding: 0 8px;
+  }
+  .hero-stat-num { font-size: 22px; }
+  .hero-stat-label { font-size: 9px; }
+  .hero-stat-divider { display: none; }
+  .hero-cta { flex-direction: column; gap: 12px; width: 100%; }
+  .btn-primary { width: 100%; justify-content: center; padding: 14px 24px; }
+
+  /* SECTIONS PADDING */
+  #problem, #ecosystem, #alur, #ai-demo,
+  #transparansi, #roadmap, #closing {
+    padding: 56px 20px;
+  }
+
+  /* PROBLEM */
+  .problem-grid { grid-template-columns: 1fr; gap: 32px; }
+  .problem-title { font-size: 28px; }
+  .problem-card { padding: 16px; }
+  .problem-card-num { font-size: 22px; }
+
+  /* ECOSYSTEM */
+  .section-title { font-size: 28px; }
+  .eco-portal { padding: 16px 24px; }
+  .eco-portal-name { font-size: 22px; }
+  .eco-platforms { grid-template-columns: 1fr; gap: 16px; }
+  .eco-platform { padding: 24px 20px; }
+  .eco-arrow-down { font-size: 18px; margin: 8px 0; }
+
+  /* FLOW TABS */
+  .flow-tabs {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .flow-tab { justify-content: center; font-size: 12px; padding: 10px 16px; }
+  .flow-story { padding: 20px; }
+  .flow-step { gap: 14px; }
+  .flow-step-num { width: 32px; height: 32px; font-size: 12px; flex-shrink: 0; }
+  .flow-step-icon { font-size: 22px; }
+  .flow-step-title { font-size: 14px; }
+  .flow-step-desc { font-size: 13px; }
+
+  /* SIM SCREEN */
+  .sim-header { font-size: 11px; }
+  .sim-value { font-size: 12px; }
+
+  /* DASHBOARD SIM */
+  .dashboard-kpi-grid { grid-template-columns: repeat(3,1fr); gap: 6px; }
+  .dashboard-kpi-val { font-size: 14px; }
+  .dashboard-kpi-label { font-size: 8px; }
+  .dashboard-table { font-size: 11px; }
+  .dashboard-table th, .dashboard-table td { padding: 6px 6px; }
+
+  /* AI DEMO */
+  #ai-demo { padding: 56px 20px; }
+  .ai-demo-grid { grid-template-columns: 1fr; gap: 40px; }
+  .ai-input-grid { grid-template-columns: 1fr; gap: 10px; }
+  .ai-input-full { grid-column: 1; }
+  .ai-card { padding: 20px; }
+  .ai-demo-left .section-title { font-size: 26px; }
+
+  /* TRANSPARANSI */
+  .transparansi-grid { grid-template-columns: 1fr; gap: 40px; }
+  .portal-kpi-row { grid-template-columns: repeat(3,1fr); gap: 6px; }
+  .portal-kpi-val { font-size: 13px; }
+  .portal-kpi-label { font-size: 8px; }
+  .portal-bar-label { width: 80px; font-size: 10px; }
+  .portal-bar-val { font-size: 10px; width: 36px; }
+
+  /* ROADMAP */
+  .roadmap-timeline::before { left: 20px; }
+  .roadmap-item { gap: 20px; }
+  .roadmap-dot { width: 40px; height: 40px; font-size: 16px; }
+  .roadmap-content { padding: 16px 18px; }
+  .roadmap-title { font-size: 15px; }
+  .roadmap-tags { gap: 4px; }
+  .roadmap-tag { font-size: 10px; padding: 2px 8px; }
+
+  /* CLOSING */
+  .closing-title { font-size: 32px; }
+  .closing-team {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .closing-team-div { width: 40px; height: 1px; }
+  .closing-badge { font-size: 11px; text-align: center; padding: 10px 14px; }
 }
 </style>
 </head>
@@ -1181,10 +1290,7 @@ nav {
     <a href="#ai-demo" class="btn-secondary">Coba AI Scoring →</a>
   </div>
 
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    Scroll
-  </div>
+
 </section>
 
 <!-- PROBLEM -->
