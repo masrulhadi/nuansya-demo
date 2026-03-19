@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUANSA — Nusantara Analytics for Syariah Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --hijau: #1B6B3A;
+  --hijau-muda: #2D8A52;
+  --hijau-gelap: #0F3D22;
+  --emas: #C9A84C;
+  --emas-muda: #E8C97A;
+  --krem: #FAF7F0;
+  --putih: #FFFFFF;
+  --teks-gelap: #1A1A1A;
+  --teks-abu: #6B7280;
+  --bg-section: #F4F8F5;
+  --merah-soft: #E53E3E;
+  --biru-soft: #2B6CB0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--krem);
+  color: var(--teks-gelap);
+  overflow-x: hidden;
+}
+
+/* ── ORNAMEN ARABESQUE ── */
+.arabesque {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════
+   NAV
+══════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 48px;
+  background: rgba(250,247,240,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(27,107,58,0.12);
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-mark {
+  width: 36px; height: 36px;
+  background: var(--hijau);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Amiri', serif;
+  color: var(--emas-muda);
+  font-size: 20px; font-weight: 700;
+}
+.nav-logo-text {
+  font-weight: 800; font-size: 18px;
+  color: var(--hijau-gelap);
+  letter-spacing: -0.5px;
+}
+.nav-logo-sub {
+  font-size: 10px; font-weight: 400;
+  color: var(--teks-abu);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block; margin-top: -2px;
+}
+
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  font-size: 13px; font-weight: 500;
+  color: var(--teks-abu);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--hijau); }
+
+.nav-badge {
+  background: var(--hijau);
+  color: white;
+  font-size: 11px; font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,107,58,0.07) 0%, transparent 60%),
+    var(--krem);
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(27,107,58,0.08);
+  border: 1px solid rgba(27,107,58,0.2);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 12px; font-weight: 600;
+  color: var(--hijau);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  background: var(--emas);
+  border-radius: 50%;
+}
+
+.hero-title {
+  font-family: 'Amiri', serif;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 700;
+  color: var(--hijau-gelap);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+.hero-title span {
+  color: var(--emas);
+}
+
+.hero-subtitle {
+  font-size: 15px; font-weight: 400;
+  color: var(--teks-abu);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-tagline {
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 400;
+  color: var(--teks-gelap);
+  max-width: 640px;
+  line-height: 1.65;
+  margin-bottom: 48px;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+.hero-tagline strong { color: var(--hijau); font-weight: 600; }
+
+.hero-stats {
+  display: flex; gap: 48px;
+  margin-bottom: 56px;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat-num {
+  font-family: 'Amiri', serif;
+  font-size: 36px; font-weight: 700;
+  color: var(--hijau);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 11px; font-weight: 500;
+  color: var(--teks-abu);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+.hero-stat-divider {
+  width: 1px;
+  background: rgba(27,107,58,0.2);
+  align-self: stretch;
+}
+
+.hero-cta {
+  display: flex; gap: 16px; align-items: center;
+  animation: fadeUp 0.6s 0.5s ease both;
+}
+.btn-primary {
+  background: var(--hijau);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover {
+  background: var(--hijau-muda);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(27,107,58,0.25);
+}
+.btn-secondary {
+  color: var(--hijau);
+  font-size: 14px; font-weight: 600;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: gap 0.2s;
+}
+.btn-secondary:hover { gap: 10px; }
+
+.hero-scroll {
+  position: absolute; bottom: 40px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: bounce 2s infinite;
+  color: var(--teks-abu); font-size: 11px;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--emas), transparent);
+}
+
+/* ══════════════════════════════════
+   PROBLEM SECTION
+══════════════════════════════════ */
+#problem {
+  padding: 100px 48px;
+  background: var(--hijau-gelap);
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center;
+}
+
+.section-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--emas);
+  margin-bottom: 16px;
+}
+
+.problem-title {
+  font-family: 'Amiri', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.problem-body {
+  font-size: 16px; font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+}
+
+.problem-cards {
+  display: flex; flex-direction: column; gap: 16px;
+}
+
+.problem-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex; align-items: flex-start; gap: 16px;
+  transition: all 0.3s;
+}
+.problem-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(201,168,76,0.3);
+  transform: translateX(4px);
+}
+
+.problem-card-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.problem-card-num {
+  font-family: 'Amiri', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--emas);
+  line-height: 1;
+}
+.problem-card-label {
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  margin-top: 2px;
+}
+.problem-card-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════
+   ECOSYSTEM OVERVIEW
+══════════════════════════════════ */
+#ecosystem {
+  padding: 100px 48px;
+  background: var(--krem);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.section-title {
+  font-family: 'Amiri', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--hijau-gelap);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-body {
+  font-size: 16px;
+  color: var(--teks-abu);
+  line-height: 1.75;
+}
+
+.ecosystem-diagram {
+  max-width: 1000px; margin: 0 auto;
+  position: relative;
+}
+
+.eco-center {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.eco-portal {
+  display: inline-block;
+  background: var(--hijau);
+  color: white;
+  padding: 20px 48px;
+  border-radius: 12px;
+  position: relative;
+}
+.eco-portal-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 4px;
+}
+.eco-portal-name {
+  font-family: 'Amiri', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--emas-muda);
+}
+.eco-portal-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+}
+
+.eco-arrow-down {
+  text-align: center;
+  font-size: 24px;
+  color: var(--hijau);
+  margin: 16px 0;
+  opacity: 0.4;
+}
+
+.eco-platforms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.eco-platform {
+  border-radius: 16px;
+  padding: 32px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.eco-platform::before {
+  content: '';
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.eco-platform:hover { transform: translateY(-4px); }
+.eco-platform:hover::before { opacity: 1; }
+
+.eco-platform.mobile {
+  background: linear-gradient(135deg, #F0FAF4, #E8F5ED);
+  border-color: rgba(27,107,58,0.2);
+}
+.eco-platform.mobile:hover { border-color: var(--hijau); box-shadow: 0 16px 48px rgba(27,107,58,0.15); }
+
+.eco-platform.web {
+  background: linear-gradient(135deg, #FDF8EE, #FAF1D8);
+  border-color: rgba(201,168,76,0.2);
+}
+.eco-platform.web:hover { border-color: var(--emas); box-shadow: 0 16px 48px rgba(201,168,76,0.15); }
+
+.eco-platform-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.mobile .eco-platform-badge { background: rgba(27,107,58,0.1); color: var(--hijau); }
+.web .eco-platform-badge { background: rgba(201,168,76,0.15); color: #8B6914; }
+
+.eco-platform-icon { font-size: 36px; margin-bottom: 12px; }
+
+.eco-platform-name {
+  font-weight: 700; font-size: 20px;
+  color: var(--hijau-gelap);
+  margin-bottom: 8px;
+}
+
+.eco-platform-desc {
+  font-size: 13px;
+  color: var(--teks-abu);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.eco-feature-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.eco-feature-list li {
+  font-size: 13px; font-weight: 500;
+  color: var(--teks-gelap);
+  display: flex; align-items: center; gap: 8px;
+}
+.eco-feature-list li::before {
+  content: '✓';
+  width: 18px; height: 18px;
+  background: var(--hijau);
+  color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700;
+  flex-shrink: 0;
+}
+.web .eco-feature-list li::before { background: var(--emas); }
+
+.eco-connectivity {
+  margin-top: 16px;
+  padding: 10px 14px;
+  background: rgba(27,107,58,0.06);
+  border-radius: 8px;
+  border-left: 3px solid var(--hijau);
+}
+.eco-connectivity-title {
+  font-size: 10px; font-weight: 700;
+  color: var(--hijau);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.eco-connectivity-body {
+  font-size: 12px;
+  color: var(--teks-abu);
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════
+   ALUR KERJA / USER JOURNEY
+══════════════════════════════════ */
+#alur {
+  padding: 100px 48px;
+  background: var(--bg-section);
+}
+
+.flow-tabs {
+  display: flex; gap: 8px;
+  margin-bottom: 48px;
+  justify-content: center;
+}
+
+.flow-tab {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: 2px solid rgba(27,107,58,0.2);
+  background: white;
+  color: var(--teks-abu);
+  font-size: 13px; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex; align-items: center; gap: 8px;
+}
+.flow-tab:hover { border-color: var(--hijau); color: var(--hijau); }
+.flow-tab.active {
+  background: var(--hijau);
+  border-color: var(--hijau);
+  color: white;
+}
+
+.flow-content { display: none; max-width: 900px; margin: 0 auto; }
+.flow-content.active { display: block; }
+
+.flow-story {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 32px;
+  border-left: 4px solid var(--hijau);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+.flow-story-persona {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px;
+}
+.flow-story-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  background: var(--bg-section);
+}
+.flow-story-name { font-weight: 700; font-size: 16px; color: var(--hijau-gelap); }
+.flow-story-role { font-size: 12px; color: var(--teks-abu); }
+.flow-story-quote {
+  font-size: 14px;
+  color: var(--teks-abu);
+  line-height: 1.7;
+  font-style: italic;
+  padding: 12px 16px;
+  background: var(--bg-section);
+  border-radius: 8px;
+}
+
+.flow-steps {
+  display: flex; flex-direction: column; gap: 0;
+}
+
+.flow-step {
+  display: flex; gap: 24px;
+  align-items: flex-start;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(27,107,58,0.08);
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease;
+  animation: none;
+}
+.flow-step.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.flow-step:last-child { border-bottom: none; }
+
+.flow-step-num {
+  width: 40px; height: 40px;
+  background: var(--hijau);
+  color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.flow-step-icon { font-size: 28px; margin-top: 4px; flex-shrink: 0; }
+
+.flow-step-content { flex: 1; }
+.flow-step-title { font-weight: 700; font-size: 16px; color: var(--hijau-gelap); margin-bottom: 4px; }
+.flow-step-desc { font-size: 14px; color: var(--teks-abu); line-height: 1.65; }
+
+.flow-step-screen {
+  background: var(--bg-section);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 12px;
+  border: 1px solid rgba(27,107,58,0.1);
+  font-size: 13px;
+}
+
+/* ── SIMULASI UI AMIL ── */
+.sim-header {
+  background: var(--hijau);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px 8px 0 0;
+  font-weight: 700; font-size: 13px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.sim-body {
+  background: white;
+  border-radius: 0 0 8px 8px;
+  padding: 14px;
+}
+.sim-field {
+  margin-bottom: 10px;
+}
+.sim-label { font-size: 11px; font-weight: 600; color: var(--teks-abu); margin-bottom: 3px; }
+.sim-value {
+  background: var(--bg-section);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px; font-weight: 500;
+  color: var(--teks-gelap);
+}
+.sim-btn {
+  width: 100%;
+  background: var(--hijau);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px; font-weight: 700;
+  text-align: center;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sim-btn:hover { background: var(--hijau-muda); }
+
+.sim-result {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  display: none;
+}
+.sim-result.layak { background: #F0FFF4; border: 1px solid #68D391; }
+.sim-result.perlu { background: #FFFFF0; border: 1px solid #ECC94B; }
+.sim-result.tidak { background: #FFF5F5; border: 1px solid #FC8181; }
+.sim-result.show { display: block; }
+
+.sim-result-badge {
+  font-size: 12px; font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.layak .sim-result-badge { background: #68D391; color: #22543D; }
+.perlu .sim-result-badge { background: #ECC94B; color: #744210; }
+.tidak .sim-result-badge { background: #FC8181; color: #742A2A; }
+
+.sim-result-text { font-size: 12px; color: var(--teks-abu); line-height: 1.6; }
+
+/* ── DASHBOARD SIMULASI ── */
+.dashboard-sim {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(27,107,58,0.1);
+}
+.dashboard-sim-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--bg-section);
+}
+.dashboard-sim-title { font-weight: 700; font-size: 14px; color: var(--hijau-gelap); }
+.dashboard-sim-badge {
+  background: var(--bg-section);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px; font-weight: 600;
+  color: var(--hijau);
+}
+.dashboard-kpi-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  margin-bottom: 16px;
+}
+.dashboard-kpi {
+  background: var(--bg-section);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.dashboard-kpi-val {
+  font-family: 'Amiri', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--hijau);
+}
+.dashboard-kpi-label {
+  font-size: 10px; font-weight: 600;
+  color: var(--teks-abu);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+.dashboard-table {
+  width: 100%; border-collapse: collapse;
+}
+.dashboard-table th {
+  background: var(--hijau);
+  color: white;
+  font-size: 11px; font-weight: 600;
+  padding: 8px 10px;
+  text-align: left;
+}
+.dashboard-table td {
+  padding: 8px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid var(--bg-section);
+}
+.dashboard-table tr:nth-child(even) td { background: var(--bg-section); }
+.status-badge {
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 10px; font-weight: 700;
+}
+.status-sync { background: #C6F6D5; color: #22543D; }
+.status-pending { background: #FEFCBF; color: #744210; }
+
+/* ══════════════════════════════════
+   AI SCORING DEMO
+══════════════════════════════════ */
+#ai-demo {
+  padding: 100px 48px;
+  background: var(--hijau-gelap);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-demo-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start;
+}
+
+.ai-demo-left .section-title { color: white; }
+.ai-demo-left .section-body { color: rgba(255,255,255,0.6); margin-bottom: 32px; }
+
+.ai-features {
+  display: flex; flex-direction: column; gap: 16px;
+}
+.ai-feature {
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.ai-feature-icon {
+  width: 36px; height: 36px;
+  background: rgba(201,168,76,0.15);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.ai-feature-title { font-weight: 600; font-size: 14px; color: white; margin-bottom: 2px; }
+.ai-feature-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+.ai-demo-right { }
+
+.ai-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.ai-card-title {
+  font-size: 13px; font-weight: 700;
+  color: var(--emas);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.ai-input-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  margin-bottom: 16px;
+}
+.ai-input-full { grid-column: 1 / -1; }
+
+.ai-label {
+  font-size: 11px; font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ai-select, .ai-input-field {
+  width: 100%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: white;
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+.ai-select:focus, .ai-input-field:focus { border-color: var(--emas); }
+.ai-select option { background: var(--hijau-gelap); }
+
+.ai-score-btn {
+  width: 100%;
+  background: var(--emas);
+  color: var(--hijau-gelap);
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 14px; font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.ai-score-btn:hover {
+  background: var(--emas-muda);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+}
+
+.ai-result {
+  margin-top: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: none;
+  animation: fadeUp 0.4s ease;
+}
+.ai-result.show { display: block; }
+
+.ai-result-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px;
+}
+.ai-result-badge {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px; font-weight: 700;
+}
+.ai-result-badge.layak { background: rgba(104,211,145,0.2); color: #68D391; border: 1px solid rgba(104,211,145,0.3); }
+.ai-result-badge.perlu { background: rgba(236,201,75,0.2); color: #ECC94B; border: 1px solid rgba(236,201,75,0.3); }
+.ai-result-badge.tidak { background: rgba(252,129,129,0.2); color: #FC8181; border: 1px solid rgba(252,129,129,0.3); }
+
+.ai-result-conf {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+.ai-result-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+.ai-result-asnaf {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(201,168,76,0.1);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--emas);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════
+   TRANSPARANSI
+══════════════════════════════════ */
+#transparansi {
+  padding: 100px 48px;
+  background: var(--krem);
+}
+
+.transparansi-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px;
+  align-items: start;
+}
+
+.portal-mockup {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.1);
+  border: 1px solid rgba(27,107,58,0.1);
+}
+.portal-topbar {
+  background: var(--hijau);
+  padding: 12px 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.portal-dot { width: 10px; height: 10px; border-radius: 50%; }
+.portal-dot.r { background: #FC8181; }
+.portal-dot.y { background: #ECC94B; }
+.portal-dot.g { background: #68D391; }
+.portal-url {
+  flex: 1;
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.8);
+  font-family: monospace;
+}
+.portal-content { padding: 20px; }
+.portal-hero {
+  background: linear-gradient(135deg, var(--hijau), var(--hijau-muda));
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 16px;
+  color: white;
+}
+.portal-hero-title { font-family: 'Amiri', serif; font-size: 20px; font-weight: 700; color: var(--emas-muda); }
+.portal-hero-sub { font-size: 11px; opacity: 0.7; margin-top: 2px; }
+.portal-kpi-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  margin-bottom: 16px;
+}
+.portal-kpi {
+  background: var(--bg-section);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.portal-kpi-val { font-weight: 800; font-size: 16px; color: var(--hijau); }
+.portal-kpi-label { font-size: 9px; color: var(--teks-abu); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+.portal-table-title { font-size: 11px; font-weight: 700; color: var(--teks-abu); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.portal-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.portal-bar-label { font-size: 11px; color: var(--teks-abu); width: 120px; flex-shrink: 0; }
+.portal-bar-track { flex: 1; height: 8px; background: var(--bg-section); border-radius: 4px; overflow: hidden; }
+.portal-bar-fill { height: 100%; border-radius: 4px; background: var(--hijau); transition: width 1s ease; }
+.portal-bar-val { font-size: 11px; font-weight: 700; color: var(--hijau); width: 50px; text-align: right; }
+
+/* ══════════════════════════════════
+   ROADMAP
+══════════════════════════════════ */
+#roadmap {
+  padding: 100px 48px;
+  background: var(--bg-section);
+}
+
+.roadmap-timeline {
+  max-width: 800px; margin: 0 auto;
+  position: relative;
+}
+.roadmap-timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--hijau), var(--emas), transparent);
+}
+
+.roadmap-item {
+  display: flex; gap: 32px;
+  padding: 0 0 40px 0;
+  position: relative;
+}
+
+.roadmap-dot {
+  width: 48px; height: 48px;
+  background: white;
+  border: 3px solid var(--hijau);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(27,107,58,0.2);
+}
+
+.roadmap-content {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 24px;
+  flex: 1;
+  border: 1px solid rgba(27,107,58,0.1);
+  transition: all 0.3s;
+}
+.roadmap-content:hover {
+  border-color: var(--hijau);
+  box-shadow: 0 8px 24px rgba(27,107,58,0.1);
+  transform: translateX(4px);
+}
+
+.roadmap-phase {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--emas);
+  margin-bottom: 4px;
+}
+.roadmap-title { font-weight: 700; font-size: 17px; color: var(--hijau-gelap); margin-bottom: 8px; }
+.roadmap-desc { font-size: 13px; color: var(--teks-abu); line-height: 1.65; }
+.roadmap-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 12px;
+}
+.roadmap-tag {
+  padding: 3px 10px;
+  background: var(--bg-section);
+  border-radius: 20px;
+  font-size: 11px; font-weight: 600;
+  color: var(--hijau);
+  border: 1px solid rgba(27,107,58,0.15);
+}
+
+/* ══════════════════════════════════
+   FOOTER / CLOSING
+══════════════════════════════════ */
+#closing {
+  padding: 100px 48px;
+  background: var(--hijau-gelap);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.closing-title {
+  font-family: 'Amiri', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.closing-title span { color: var(--emas); }
+.closing-sub { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 48px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+.closing-team {
+  display: inline-flex; align-items: center; gap: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 16px 28px;
+  margin-bottom: 48px;
+}
+.closing-team-name { font-weight: 700; color: white; font-size: 16px; }
+.closing-team-inst { font-size: 12px; color: rgba(255,255,255,0.5); }
+.closing-team-div { width: 1px; height: 32px; background: rgba(255,255,255,0.15); }
+.closing-hackathon { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--emas); text-transform: uppercase; }
+
+.closing-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 13px; font-weight: 600;
+  color: var(--emas);
+}
+
+/* ══════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+@keyframes countUp {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: all 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Offline indicator pulse */
+.offline-dot { animation: pulse 2s infinite; }
+
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  #hero { padding: 100px 24px 60px; }
+  .hero-stats { gap: 24px; }
+  .problem-grid, .eco-platforms, .ai-demo-grid, .transparansi-grid { grid-template-columns: 1fr; gap: 40px; }
+  #problem, #ecosystem, #alur, #ai-demo, #transparansi, #roadmap, #closing { padding: 60px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">ن</div>
+    <div>
+      <div class="nav-logo-text">NUANSA</div>
+      <span class="nav-logo-sub">Nusantara Analytics for Syariah Assets</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#ecosystem">Ekosistem</a></li>
+    <li><a href="#alur">Alur Kerja</a></li>
+    <li><a href="#ai-demo">AI Scoring</a></li>
+    <li><a href="#transparansi">Transparansi</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+  </ul>
+  <span class="nav-badge">DIGDAYA X 2026</span>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="arabesque" style="top:-200px;left:-200px;"></div>
+  <div class="arabesque" style="bottom:-200px;right:-200px;"></div>
+
+  <div class="hero-eyebrow">
+    <div class="hero-eyebrow-dot"></div>
+    Dari Gampong, untuk Indonesia
+  </div>
+
+  <h1 class="hero-title">
+    <span>NUANSA</span>
+  </h1>
+  <p class="hero-subtitle">Nusantara Analytics for Syariah Assets</p>
+
+  <p class="hero-tagline">
+    Platform ZISWAF yang memulai dari tempat yang selama ini diabaikan —
+    <strong>gampong dan masjid</strong> — untuk mengoptimalkan potensi
+    zakat nasional <strong>Rp327 triliun</strong> yang baru terealisasi 12,4%.
+  </p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">Rp327T</div>
+      <div class="hero-stat-label">Potensi Zakat Nasional</div>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">87,6%</div>
+      <div class="hero-stat-label">Gap Tidak Tergarap</div>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">58%</div>
+      <div class="hero-stat-label">Wakaf Belum Sertifikat</div>
+    </div>
+  </div>
+
+  <div class="hero-cta">
+    <a href="#ecosystem" class="btn-primary">Lihat Ekosistem NUANSA ↓</a>
+    <a href="#ai-demo" class="btn-secondary">Coba AI Scoring →</a>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="problem-grid">
+    <div class="fade-in">
+      <div class="section-label">Akar Masalah</div>
+      <h2 class="problem-title">Data dari Gampong Tidak Pernah Naik ke Nasional</h2>
+      <p class="problem-body">
+        SIMBA BAZNAS dirancang top-down — data mengalir dari pusat ke daerah.
+        Tapi jutaan transaksi zakat terjadi di level paling bawah: di gampong,
+        di masjid, di tangan amil yang masih mencatat dengan buku tulis.
+        Data itu tidak pernah sampai. Bukan karena tidak ada — tapi karena tidak ada infrastruktur yang menjemputnya.
+      </p>
+    </div>
+    <div class="problem-cards fade-in">
+      <div class="problem-card">
+        <div class="problem-card-icon">📓</div>
+        <div>
+          <div class="problem-card-num">36,9%</div>
+          <div class="problem-card-label">Lembaga Zakat Tanpa Staf IT</div>
+          <div class="problem-card-desc">Amil masih mencatat manual di buku ekspedisi fisik — rentan hilang dan manipulasi</div>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">🔁</div>
+        <div>
+          <div class="problem-card-num">Mustahik Abadi</div>
+          <div class="problem-card-label">Distribusi Subjektif Tanpa Data</div>
+          <div class="problem-card-desc">Penerima zakat sama dari tahun ke tahun tanpa evaluasi kemandirian berbasis data</div>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">📜</div>
+        <div>
+          <div class="problem-card-num">52%</div>
+          <div class="problem-card-label">Wakaf Aceh Belum Bersertifikat</div>
+          <div class="problem-card-desc">18.520 bidang tanah wakaf rentan sengketa karena ketiadaan dokumentasi yang kuat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section id="ecosystem">
+  <div class="section-header fade-in">
+    <div class="section-label" style="color:var(--hijau);">Ekosistem NUANSA</div>
+    <h2 class="section-title">Satu Portal, Dua Platform, Satu Ekosistem</h2>
+    <p class="section-body">
+      NUANSA bukan sekadar aplikasi — ia adalah infrastruktur data ZISWAF
+      yang terhubung dari gampong hingga nasional dalam satu ekosistem yang transparan dan patuh regulasi.
+    </p>
+  </div>
+
+  <div class="ecosystem-diagram fade-in">
+    <div class="eco-center">
+      <div class="eco-portal">
+        <div class="eco-portal-label">🌐 Portal Utama &amp; Transparansi Publik</div>
+        <div class="eco-portal-name">nuansa.id</div>
+        <div class="eco-portal-desc">Pintu gerbang ekosistem · Data agregat publik · Sesuai standar keterbukaan BAZNAS</div>
+      </div>
+    </div>
+
+    <div class="eco-arrow-down">↓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓</div>
+
+    <div class="eco-platforms">
+
+      <div class="eco-platform mobile fade-in">
+        <div class="eco-platform-badge">
+          <span class="offline-dot" style="width:6px;height:6px;background:var(--hijau);border-radius:50%;display:inline-block;"></span>
+          Mobile App · Android
+        </div>
+        <div class="eco-platform-icon">📱</div>
+        <div class="eco-platform-name">NUANSA untuk Amil</div>
+        <div class="eco-platform-desc">
+          Dirancang untuk amil gampong dan masjid. Bekerja dengan
+          <em>progressive connectivity</em> — semua fitur aktif saat online,
+          beralih otomatis ke mode pencatatan lokal saat offline.
+        </div>
+        <ul class="eco-feature-list">
+          <li>Input muzakki &amp; dana umat (offline)</li>
+          <li>AI Scoring Mustahik on-device</li>
+          <li>Auto-sync ke BAZNAS saat online</li>
+          <li>Laporan PDF otomatis</li>
+        </ul>
+        <div class="eco-connectivity" style="margin-top:16px;">
+          <div class="eco-connectivity-title">🔴 Mode Offline</div>
+          <div class="eco-connectivity-body">Input data, scoring AI lokal — tanpa internet. Sync otomatis saat koneksi tersedia.</div>
+        </div>
+      </div>
+
+      <div class="eco-platform web fade-in">
+        <div class="eco-platform-badge">🖥️ Web App · Browser</div>
+        <div class="eco-platform-icon">📊</div>
+        <div class="eco-platform-name">NUANSA untuk BAZNAS</div>
+        <div class="eco-platform-desc">
+          Dashboard analitik untuk operator BAZNAS dari level
+          Kecamatan hingga Nasional. Akses via browser — tidak perlu instalasi.
+        </div>
+        <ul class="eco-feature-list" style="--c:var(--emas);">
+          <li>Dashboard agregat per wilayah</li>
+          <li>Pantau realisasi distribusi real-time</li>
+          <li>Ekspor laporan compatible SIMBA</li>
+          <li>Early warning anomali mustahik</li>
+        </ul>
+        <div class="eco-connectivity" style="margin-top:16px;border-left-color:var(--emas);background:rgba(201,168,76,0.06);">
+          <div class="eco-connectivity-title" style="color:var(--emas);">🏛️ Multi-level Akses</div>
+          <div class="eco-connectivity-body">Kecamatan → Kabupaten → Provinsi → Nasional. Setiap level melihat data wilayahnya.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ALUR KERJA -->
+<section id="alur">
+  <div class="section-header fade-in">
+    <div class="section-label" style="color:var(--hijau);">Alur Kerja</div>
+    <h2 class="section-title">Bagaimana NUANSA Bekerja</h2>
+    <p class="section-body">
+      Ikuti perjalanan data dari tangan amil di gampong Aceh
+      hingga dashboard BAZNAS Nasional.
+    </p>
+  </div>
+
+  <div class="flow-tabs">
+    <button class="flow-tab active" onclick="switchTab('amil')">📱 Perspektif Amil Gampong</button>
+    <button class="flow-tab" onclick="switchTab('baznas')">🏛️ Perspektif BAZNAS</button>
+    <button class="flow-tab" onclick="switchTab('publik')">🌐 Perspektif Publik</button>
+  </div>
+
+  <!-- TAB AMIL -->
+  <div class="flow-content active" id="tab-amil">
+    <div class="flow-story">
+      <div class="flow-story-persona">
+        <div class="flow-story-avatar">👳</div>
+        <div>
+          <div class="flow-story-name">Pak Mustafa</div>
+          <div class="flow-story-role">Amil Masjid Al-Ikhlas, Gampong Krueng Cut, Banda Aceh</div>
+        </div>
+      </div>
+      <div class="flow-story-quote">
+        "Selama ini saya catat zakat di buku tulis. Kalau buku hilang, data hilang. Kalau ada yang tanya berapa total bulan ini, saya harus hitung ulang satu-satu."
+      </div>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <div class="flow-step-icon">📲</div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Unduh &amp; Login NUANSA App</div>
+          <div class="flow-step-desc">Pak Mustafa mengunduh NUANSA dari link yang dibagikan BAZNAS Banda Aceh. Login dengan akun amil yang sudah diverifikasi. Tidak perlu email — cukup nomor HP terdaftar.</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <div class="flow-step-icon">📝</div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Input Data Mustahik (Tanpa Internet)</div>
+          <div class="flow-step-desc">Listrik mati, internet tidak ada — tidak masalah. Pak Mustafa tetap input data warga yang datang. NUANSA menyimpan semua data terenkripsi di perangkatnya.</div>
+          <div class="flow-step-screen">
+            <div class="sim-header">
+              <span>NUANSA · Input Mustahik</span>
+              <span style="background:rgba(255,100,100,0.3);padding:2px 8px;border-radius:4px;font-size:10px;">🔴 Offline</span>
+            </div>
+            <div class="sim-body">
+              <div class="sim-field">
+                <div class="sim-label">Nama Mustahik</div>
+                <div class="sim-value">Aminah binti Yusuf</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <div class="sim-field">
+                  <div class="sim-label">Jumlah Tanggungan</div>
+                  <div class="sim-value">4 orang</div>
+                </div>
+                <div class="sim-field">
+                  <div class="sim-label">Pendapatan/Bulan</div>
+                  <div class="sim-value">Rp 800.000</div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <div class="sim-field">
+                  <div class="sim-label">Kondisi Rumah</div>
+                  <div class="sim-value">Tidak layak huni</div>
+                </div>
+                <div class="sim-field">
+                  <div class="sim-label">Status Pekerjaan</div>
+                  <div class="sim-value">Tidak tetap</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-step-num">3</div>
+        <div class="flow-step-icon">🤖</div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">AI Scoring — Hasil Kelayakan Muncul Instan</div>
+          <div class="flow-step-desc">Tanpa mengirim data ke server, model AI di dalam perangkat Pak Mustafa langsung mengevaluasi dan memberikan rekomendasi berbasis data — bukan perasaan.</div>
+          <div class="flow-step-screen">
+            <div class="sim-header"><span>Hasil AI Scoring</span></div>
+            <div class="sim-body">
+              <div class="sim-result layak show">
+                <div class="sim-result-badge">✓ LAYAK MENERIMA ZAKAT</div>
+                <div class="sim-result-text">Berdasarkan 5 indikator, Aminah binti Yusuf memenuhi kriteria <strong>Fakir</strong> (Asnaf ke-1). Pendapatan Rp800.000/bulan dengan 4 tanggungan berada di bawah garis kemiskinan Aceh (Rp612.299/kapita/bulan). Disarankan distribusi rutin 3 bulan dengan evaluasi ulang di bulan ke-4.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-step-num">4</div>
+        <div class="flow-step-icon">🔄</div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Koneksi Tersedia → Auto-Sync ke BAZNAS</div>
+          <div class="flow-step-desc">Saat Pak Mustafa pulang ke rumah dan terhubung WiFi, NUANSA otomatis menyinkronkan semua data yang terinput hari ini ke server BAZNAS Kota Banda Aceh. Tidak ada yang terlewat.</div>
+          <div class="flow-step-screen" style="background:var(--bg-section);">
+            <div style="display:flex;align-items:center;gap:10px;padding:8px;">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--hijau);">Sync Berhasil</div>
+                <div style="font-size:11px;color:var(--teks-abu);">3 mustahik · 7 muzakki · Rp2.450.000 dana — dikirim ke BAZNAS Banda Aceh · 14 detik lalu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB BAZNAS -->
+  <div class="flow-content" id="tab-baznas">
+    <div class="flow-story">
+      <div class="flow-story-persona">
+        <div class="flow-story-avatar">👩‍💼</div>
+        <div>
+          <div class="flow-story-name">Bu Rahmawati</div>
+          <div class="flow-story-role">Operator BAZNAS Kota Banda Aceh</div>
+        </div>
+      </div>
+      <div class="flow-story-quote">
+        "Selama ini saya tidak tahu berapa sebenarnya zakat yang terkumpul dari masjid-masjid di kota ini. Data yang masuk ke sistem SIMBA hanya dari kantor BAZNAS, bukan dari gampong."
+      </div>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <div class="flow-step-icon">🖥️</div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Buka Dashboard di Browser</div>
+          <div class="flow-step-desc">Bu Rahmawati membuka nuansa.id/dashboard di laptop kantornya. Login dengan akun operator BAZNAS Kota. Dashboard menampilkan data real-time dari seluruh gampong di Banda Aceh.</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <div class="flow-step-icon">📊</div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Pantau Realisasi Seluruh Gampong</div>
+          <div class="flow-step-desc">Untuk pertama kalinya, Bu Rahmawati bisa melihat data dari 90 gampong di Banda Aceh dalam satu layar — bukan estimasi, tapi data yang dikirim langsung oleh amil.</div>
+          <div class="flow-step-screen">
+            <div class="dashboard-sim">
+              <div class="dashboard-sim-header">
+                <div class="dashboard-sim-title">Dashboard BAZNAS Kota Banda Aceh</div>
+                <div class="dashboard-sim-badge">🟢 Live · Update 2 mnt lalu</div>
+              </div>
+              <div class="dashboard-kpi-grid">
+                <div class="dashboard-kpi">
+                  <div class="dashboard-kpi-val">Rp 847Jt</div>
+                  <div class="dashboard-kpi-label">Terkumpul Bulan Ini</div>
+                </div>
+                <div class="dashboard-kpi">
+                  <div class="dashboard-kpi-val">1.284</div>
+                  <div class="dashboard-kpi-label">Mustahik Terdata</div>
+                </div>
+                <div class="dashboard-kpi">
+                  <div class="dashboard-kpi-val">67/90</div>
+                  <div class="dashboard-kpi-label">Gampong Aktif</div>
+                </div>
+              </div>
+              <table class="dashboard-table">
+                <thead>
+                  <tr><th>Gampong</th><th>Amil</th><th>Dana (Rp)</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Krueng Cut</td><td>Mustafa</td><td>2.450.000</td><td><span class="status-badge status-sync">✓ Sync</span></td></tr>
+                  <tr><td>Lambaro Skep</td><td>Ibrahim</td><td>1.870.000</td><td><span class="status-badge status-sync">✓ Sync</span></td></tr>
+                  <tr><td>Peunyerat</td><td>Kamaruddin</td><td>—</td><td><span class="status-badge status-pending">⏳ Pending</span></td></tr>
+                  <tr><td>Lhong Raya</td><td>Syarifuddin</td><td>3.120.000</td><td><span class="status-badge status-sync">✓ Sync</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-step-num">3</div>
+        <div class="flow-step-icon">📤</div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Ekspor Laporan Compatible SIMBA</div>
+          <div class="flow-step-desc">Satu klik — NUANSA menghasilkan file CSV yang langsung compatible dengan format SIMBA BAZNAS Pusat. Tidak perlu rekap manual. Tidak perlu khawatir format salah.</div>
+          <div class="flow-step-screen" style="text-align:center;padding:20px;">
+            <div style="font-size:32px;margin-bottom:8px;">📥</div>
+            <div style="font-weight:700;color:var(--hijau);margin-bottom:4px;">Laporan SIMBA Siap Diunduh</div>
+            <div style="font-size:12px;color:var(--teks-abu);">laporan_simba_banda_aceh_november_2025.csv · 847 baris data · Compatible SIMBA v3.2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB PUBLIK -->
+  <div class="flow-content" id="tab-publik">
+    <div class="flow-story">
+      <div class="flow-story-persona">
+        <div class="flow-story-avatar">👨</div>
+        <div>
+          <div class="flow-story-name">Warga Masyarakat</div>
+          <div class="flow-story-role">Muzakki yang ingin memastikan zakatnya sampai</div>
+        </div>
+      </div>
+      <div class="flow-story-quote">
+        "Saya bayar zakat di masjid setiap tahun. Tapi saya tidak pernah tahu zakatnya dipakai untuk apa dan berapa orang yang terbantu."
+      </div>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <div class="flow-step-icon">🌐</div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Buka nuansa.id — Tanpa Login</div>
+          <div class="flow-step-desc">Portal transparansi publik NUANSA bisa diakses oleh siapa saja tanpa perlu mendaftar. Data yang ditampilkan adalah agregat — tidak ada data personal mustahik yang terekspos.</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <div class="flow-step-icon">📈</div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Lihat Data Agregat Per Wilayah</div>
+          <div class="flow-step-desc">Total zakat terkumpul, jumlah mustahik terbantu, dan distribusi per gampong — semua bisa dilihat publik sesuai standar keterbukaan informasi BAZNAS. Transparansi yang membangun kepercayaan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SCORING DEMO -->
+<section id="ai-demo">
+  <div class="ai-demo-grid">
+    <div class="ai-demo-left fade-in">
+      <div class="section-label">AI Scoring Mustahik</div>
+      <h2 class="section-title" style="color:white;">Keadilan Berbasis Data, Bukan Perasaan</h2>
+      <p class="section-body">
+        Model Naïve Bayes yang berjalan langsung di perangkat amil — tanpa internet,
+        tanpa mengirim data ke server — memberikan rekomendasi kelayakan mustahik
+        berdasarkan kriteria 8 Asnaf dalam fikih zakat.
+      </p>
+      <div class="ai-features">
+        <div class="ai-feature">
+          <div class="ai-feature-icon">🏠</div>
+          <div>
+            <div class="ai-feature-title">On-Device Inference</div>
+            <div class="ai-feature-desc">Model TensorFlow Lite berjalan lokal. Data mustahik tidak pernah keluar dari perangkat untuk proses scoring.</div>
+          </div>
+        </div>
+        <div class="ai-feature">
+          <div class="ai-feature-icon">📖</div>
+          <div>
+            <div class="ai-feature-title">Berbasis 8 Asnaf</div>
+            <div class="ai-feature-desc">Setiap fitur input dipilih berdasarkan kriteria syariah — validasi oleh ahli Ekonomi Syariah dalam tim.</div>
+          </div>
+        </div>
+        <div class="ai-feature">
+          <div class="ai-feature-icon">💬</div>
+          <div>
+            <div class="ai-feature-title">Narasi yang Dapat Dibaca Amil</div>
+            <div class="ai-feature-desc">Bukan hanya angka — sistem menjelaskan alasan dalam bahasa yang bisa dipahami amil non-teknis.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-demo-right fade-in">
+      <div class="ai-card">
+        <div class="ai-card-title">⚡ Coba AI Scoring Sekarang</div>
+        <div class="ai-input-grid">
+          <div>
+            <div class="ai-label">Jumlah Tanggungan</div>
+            <select class="ai-select" id="tanggungan">
+              <option value="1">1 orang</option>
+              <option value="2">2 orang</option>
+              <option value="3">3 orang</option>
+              <option value="4" selected>4 orang</option>
+              <option value="5">5+ orang</option>
+            </select>
+          </div>
+          <div>
+            <div class="ai-label">Pendapatan/Bulan</div>
+            <select class="ai-select" id="pendapatan">
+              <option value="sangat-rendah">Di bawah Rp500rb</option>
+              <option value="rendah" selected>Rp500rb – Rp1Jt</option>
+              <option value="sedang">Rp1Jt – Rp2,5Jt</option>
+              <option value="cukup">Di atas Rp2,5Jt</option>
+            </select>
+          </div>
+          <div>
+            <div class="ai-label">Kondisi Rumah</div>
+            <select class="ai-select" id="rumah">
+              <option value="tidak-layak" selected>Tidak layak huni</option>
+              <option value="sederhana">Rumah sederhana</option>
+              <option value="layak">Rumah layak</option>
+            </select>
+          </div>
+          <div>
+            <div class="ai-label">Status Pekerjaan</div>
+            <select class="ai-select" id="pekerjaan">
+              <option value="tidak-ada">Tidak bekerja</option>
+              <option value="tidak-tetap" selected>Tidak tetap</option>
+              <option value="tetap">Pekerjaan tetap</option>
+            </select>
+          </div>
+          <div class="ai-input-full">
+            <div class="ai-label">Kondisi Kesehatan / Disabilitas</div>
+            <select class="ai-select" id="kesehatan">
+              <option value="sehat">Sehat</option>
+              <option value="sakit-kronis">Sakit Kronis</option>
+              <option value="disabilitas" selected>Disabilitas / Lansia</option>
+            </select>
+          </div>
+        </div>
+        <button class="ai-score-btn" onclick="runScoring()">
+          🤖 Nilai Kelayakan Mustahik
+        </button>
+        <div class="ai-result" id="ai-result">
+          <div class="ai-result-header">
+            <span class="ai-result-badge" id="result-badge"></span>
+            <span class="ai-result-conf" id="result-conf"></span>
+          </div>
+          <div class="ai-result-text" id="result-text"></div>
+          <div class="ai-result-asnaf" id="result-asnaf"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARANSI -->
+<section id="transparansi">
+  <div class="transparansi-grid">
+    <div class="portal-mockup fade-in">
+      <div class="portal-topbar">
+        <div class="portal-dot r"></div>
+        <div class="portal-dot y"></div>
+        <div class="portal-dot g"></div>
+        <div class="portal-url">nuansa.id · Portal Transparansi Publik</div>
+      </div>
+      <div class="portal-content">
+        <div class="portal-hero">
+          <div class="portal-hero-title">NUANSA · Aceh</div>
+          <div class="portal-hero-sub">Data ZISWAF Publik · Diperbarui Real-time</div>
+        </div>
+        <div class="portal-kpi-row">
+          <div class="portal-kpi">
+            <div class="portal-kpi-val">Rp3,1T</div>
+            <div class="portal-kpi-label">Potensi ZISWAF Aceh</div>
+          </div>
+          <div class="portal-kpi">
+            <div class="portal-kpi-val">8.420</div>
+            <div class="portal-kpi-label">Mustahik Terbantu</div>
+          </div>
+          <div class="portal-kpi">
+            <div class="portal-kpi-val">342</div>
+            <div class="portal-kpi-label">Gampong Terkoneksi</div>
+          </div>
+        </div>
+        <div class="portal-table-title">Realisasi per Kabupaten/Kota</div>
+        <div class="portal-bar-row">
+          <div class="portal-bar-label">Banda Aceh</div>
+          <div class="portal-bar-track"><div class="portal-bar-fill" style="width:72%"></div></div>
+          <div class="portal-bar-val">72%</div>
+        </div>
+        <div class="portal-bar-row">
+          <div class="portal-bar-label">Aceh Besar</div>
+          <div class="portal-bar-track"><div class="portal-bar-fill" style="width:58%"></div></div>
+          <div class="portal-bar-val">58%</div>
+        </div>
+        <div class="portal-bar-row">
+          <div class="portal-bar-label">Pidie</div>
+          <div class="portal-bar-track"><div class="portal-bar-fill" style="width:41%"></div></div>
+          <div class="portal-bar-val">41%</div>
+        </div>
+        <div class="portal-bar-row">
+          <div class="portal-bar-label">Aceh Utara</div>
+          <div class="portal-bar-track"><div class="portal-bar-fill" style="width:33%"></div></div>
+          <div class="portal-bar-val">33%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <div class="section-label" style="color:var(--hijau);">Transparansi Publik</div>
+      <h2 class="section-title">Dana Umat Dikelola Secara Terbuka</h2>
+      <p class="section-body" style="margin-bottom:24px;">
+        Portal nuansa.id dapat diakses siapa saja tanpa login.
+        Masyarakat bisa memantau realisasi zakat di wilayahnya secara real-time —
+        membangun kepercayaan yang selama ini menjadi hambatan utama rendahnya partisipasi muzakki.
+      </p>
+      <p class="section-body" style="margin-bottom:32px;">
+        Data yang ditampilkan hanya <strong>data agregat</strong> —
+        tidak ada informasi personal mustahik yang terekspos.
+        Sepenuhnya sesuai dengan standar keterbukaan informasi BAZNAS
+        dan UU Pelindungan Data Pribadi No. 27/2022.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px;background:var(--bg-section);border-radius:10px;">
+          <span style="font-size:24px;">🔒</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;color:var(--hijau-gelap);">Data Mustahik Terlindungi</div>
+            <div style="font-size:12px;color:var(--teks-abu);">Identitas individu tidak pernah terekspos ke publik. Sesuai UU PDP Pasal 4.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px;background:var(--bg-section);border-radius:10px;">
+          <span style="font-size:24px;">📋</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;color:var(--hijau-gelap);">Standar BAZNAS</div>
+            <div style="font-size:12px;color:var(--teks-abu);">Format dan cakupan data mengikuti praktik keterbukaan informasi BAZNAS yang berlaku.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px;background:var(--bg-section);border-radius:10px;">
+          <span style="font-size:24px;">⚖️</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;color:var(--hijau-gelap);">Patuh Regulasi Penuh</div>
+            <div style="font-size:12px;color:var(--teks-abu);">UU Zakat 23/2011 · UU PDP 27/2022 · PSAK 109 · Fatwa DSN-MUI 65/2022</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="section-header fade-in">
+    <div class="section-label" style="color:var(--hijau);">Roadmap</div>
+    <h2 class="section-title">Dari Gampong ke Nasional</h2>
+    <p class="section-body">Tahapan pengembangan yang realistis dan terukur.</p>
+  </div>
+
+  <div class="roadmap-timeline">
+    <div class="roadmap-item fade-in">
+      <div class="roadmap-dot">🌱</div>
+      <div class="roadmap-content">
+        <div class="roadmap-phase">Fase 0 · Sekarang</div>
+        <div class="roadmap-title">Riset &amp; Desain</div>
+        <div class="roadmap-desc">Riset mendalam 5 kategori selesai. Data lokal Aceh + nasional tervalidasi. Wireframe UX dalam pengerjaan. Validasi dengan amil gampong Banda Aceh.</div>
+        <div class="roadmap-tags">
+          <span class="roadmap-tag">✅ Riset Selesai</span>
+          <span class="roadmap-tag">✅ Data Tervalidasi</span>
+          <span class="roadmap-tag">🔄 Wireframe</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-item fade-in">
+      <div class="roadmap-dot">⚙️</div>
+      <div class="roadmap-content">
+        <div class="roadmap-phase">Fase 1 · Essential Training PIDI</div>
+        <div class="roadmap-title">MVP Core — Offline Data Entry + AI Scoring</div>
+        <div class="roadmap-desc">Mobile App Flutter dengan offline-first database (Drift + AES-256), sync engine PowerSync, dan model Naïve Bayes TF Lite on-device. Dashboard BAZNAS web sederhana.</div>
+        <div class="roadmap-tags">
+          <span class="roadmap-tag">Flutter Mobile</span>
+          <span class="roadmap-tag">AI Scoring</span>
+          <span class="roadmap-tag">Web Dashboard</span>
+          <span class="roadmap-tag">SIMBA Export</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-item fade-in">
+      <div class="roadmap-dot">🚀</div>
+      <div class="roadmap-content">
+        <div class="roadmap-phase">Fase 2 · Akselerasi (Bulan 4–6)</div>
+        <div class="roadmap-title">Pilot 10 Gampong Aceh</div>
+        <div class="roadmap-desc">Deploy ke 10 gampong di Banda Aceh dan Aceh Besar. Validasi UX oleh amil nyata. Iterasi model AI dengan data primer. Integrasi resmi BAZNAS Aceh.</div>
+        <div class="roadmap-tags">
+          <span class="roadmap-tag">10 Gampong Pilot</span>
+          <span class="roadmap-tag">Data Primer AI</span>
+          <span class="roadmap-tag">MoU BAZNAS Aceh</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-item fade-in">
+      <div class="roadmap-dot">🌟</div>
+      <div class="roadmap-content">
+        <div class="roadmap-phase">Fase 3 · Pasca-FEKDI (6–24 Bulan)</div>
+        <div class="roadmap-title">Ekspansi 23 Kabupaten/Kota Aceh + Modul Wakaf</div>
+        <div class="roadmap-desc">Skalasi ke seluruh Aceh. Pengembangan modul Wakaf Digital (58% wakaf nasional belum tersertifikat). Lisensi SaaS ke BAZNAS Kabupaten. Potensi replikasi ke provinsi lain.</div>
+        <div class="roadmap-tags">
+          <span class="roadmap-tag">23 Kabupaten Aceh</span>
+          <span class="roadmap-tag">Modul Wakaf</span>
+          <span class="roadmap-tag">SaaS B2G</span>
+          <span class="roadmap-tag">Replikasi Nasional</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="closing">
+  <div class="arabesque" style="top:-100px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);"></div>
+
+  <div class="closing-title fade-in">
+    Dari <span>Gampong</span>,<br>untuk Indonesia
+  </div>
+  <p class="closing-sub fade-in">
+    NUANSA dibangun oleh anak Aceh, dari masalah yang kami saksikan sendiri,
+    untuk mengoptimalkan potensi dana umat terbesar di dunia.
+  </p>
+
+  <div class="closing-team fade-in">
+    <div>
+      <div class="closing-team-name">Tim Youser_Root</div>
+      <div class="closing-team-inst">UIN Ar-Raniry Banda Aceh</div>
+    </div>
+    <div class="closing-team-div"></div>
+    <div>
+      <div class="closing-hackathon">DIGDAYA X Hackathon 2026</div>
+      <div class="closing-team-inst" style="margin-top:2px;">Pusat Inovasi Digital Indonesia · PIDI</div>
+    </div>
+  </div>
+
+  <div class="closing-badge fade-in">
+    <span>🏆</span>
+    Kategori A · Penguatan Ketahanan & Inovasi Keuangan · Digitalisasi Keuangan Syariah
+  </div>
+</section>
+
+<script>
+// ── SCROLL ANIMATIONS ──────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Flow steps animation
+const stepObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const steps = entry.target.querySelectorAll('.flow-step');
+      steps.forEach((step, i) => {
+        setTimeout(() => step.classList.add('visible'), i * 150);
+      });
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.flow-content').forEach(el => stepObserver.observe(el));
+
+// ── TAB SWITCHING ──────────────────────────────────────
+function switchTab(tab) {
+  document.querySelectorAll('.flow-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.flow-content').forEach(c => c.classList.remove('active'));
+
+  event.target.classList.add('active');
+  const content = document.getElementById('tab-' + tab);
+  content.classList.add('active');
+
+  // Re-trigger step animations
+  const steps = content.querySelectorAll('.flow-step');
+  steps.forEach(s => s.classList.remove('visible'));
+  setTimeout(() => {
+    steps.forEach((step, i) => {
+      setTimeout(() => step.classList.add('visible'), i * 150);
+    });
+  }, 50);
+}
+
+// ── AI SCORING LOGIC ──────────────────────────────────
+function runScoring() {
+  const tanggungan = parseInt(document.getElementById('tanggungan').value);
+  const pendapatan = document.getElementById('pendapatan').value;
+  const rumah = document.getElementById('rumah').value;
+  const pekerjaan = document.getElementById('pekerjaan').value;
+  const kesehatan = document.getElementById('kesehatan').value;
+
+  // Simple scoring logic (simulating Naïve Bayes output)
+  let score = 0;
+  if (tanggungan >= 4) score += 3;
+  else if (tanggungan >= 2) score += 1;
+
+  if (pendapatan === 'sangat-rendah') score += 3;
+  else if (pendapatan === 'rendah') score += 2;
+  else if (pendapatan === 'sedang') score += 1;
+
+  if (rumah === 'tidak-layak') score += 2;
+  else if (rumah === 'sederhana') score += 1;
+
+  if (pekerjaan === 'tidak-ada') score += 2;
+  else if (pekerjaan === 'tidak-tetap') score += 1;
+
+  if (kesehatan === 'disabilitas') score += 2;
+  else if (kesehatan === 'sakit-kronis') score += 1;
+
+  const result = document.getElementById('ai-result');
+  const badge = document.getElementById('result-badge');
+  const conf = document.getElementById('result-conf');
+  const text = document.getElementById('result-text');
+  const asnaf = document.getElementById('result-asnaf');
+
+  result.className = 'ai-result show';
+
+  if (score >= 8) {
+    badge.className = 'ai-result-badge layak';
+    badge.textContent = '✓ LAYAK MENERIMA ZAKAT';
+    conf.textContent = 'Tingkat keyakinan model: 93%';
+    text.textContent = `Berdasarkan ${tanggungan} tanggungan, pendapatan di bawah garis kemiskinan Aceh, kondisi rumah yang tidak layak huni, dan kondisi kesehatan yang membutuhkan perhatian khusus — mustahik ini memenuhi kriteria penerima zakat. Disarankan distribusi rutin 3 bulan dengan evaluasi kemandirian di bulan ke-4.`;
+    asnaf.textContent = '📖 Klasifikasi Asnaf: Fakir (tidak memiliki harta dan pekerjaan yang mencukupi) — Asnaf ke-1 dalam Al-Qur\'an Surat At-Taubah Ayat 60';
+  } else if (score >= 4) {
+    badge.className = 'ai-result-badge perlu';
+    badge.textContent = '⚠ PERLU VERIFIKASI LANJUTAN';
+    conf.textContent = 'Tingkat keyakinan model: 78%';
+    text.textContent = `Profil mustahik berada di zona abu-abu. Beberapa indikator menunjukkan kerentanan, namun belum cukup untuk klasifikasi otomatis. Disarankan amil melakukan kunjungan rumah untuk verifikasi kondisi sebenarnya sebelum keputusan distribusi diambil.`;
+    asnaf.textContent = '📖 Kemungkinan Asnaf: Miskin (memiliki harta/pekerjaan namun tidak mencukupi) — perlu verifikasi kondisi aset dan pendapatan aktual';
+  } else {
+    badge.className = 'ai-result-badge tidak';
+    badge.textContent = '✗ TIDAK MEMENUHI KRITERIA';
+    conf.textContent = 'Tingkat keyakinan model: 88%';
+    text.textContent = `Berdasarkan data yang diinput, mustahik ini tidak memenuhi kriteria 8 Asnaf penerima zakat. Pendapatan dan kondisi yang dilaporkan berada di atas ambang kemiskinan. Catatan: keputusan akhir tetap di tangan amil — AI hanya memberikan rekomendasi berbasis data.`;
+    asnaf.textContent = '📖 Catatan Syariah: Keputusan distribusi zakat adalah hak dan tanggung jawab amil. AI Scoring adalah alat bantu, bukan pengganti ijtihad amil.';
+  }
+}
+
+// ── NAVBAR SCROLL EFFECT ──────────────────────────────
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// ── TRIGGER FIRST TAB STEPS ──────────────────────────
+setTimeout(() => {
+  document.querySelectorAll('#tab-amil .flow-step').forEach((step, i) => {
+    setTimeout(() => step.classList.add('visible'), i * 200 + 500);
+  });
+}, 100);
+</script>
+
+</body>
+</html>
