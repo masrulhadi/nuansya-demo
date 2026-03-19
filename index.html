@@ -3,7 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NUANSA — Nusantara Analytics for Syariah Assets</title>
+<title>NUANSYA — Nusantara Analytics for Syariah Assets</title>
+
+<!-- Favicon SVG -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B6B3A'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='40' fill='%23C9A84C'%3E%D9%86%3C/text%3E%3C/svg%3E">
+<link rel="alternate icon" href="data:image/png;base64,iVBORw0KGgo=">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="NUANSYA — Platform ZISWAF Digital dari Gampong ke Nasional">
+<meta property="og:description" content="Ekosistem ZISWAF offline-first dengan AI Scoring Mustahik. Mengoptimalkan potensi zakat Rp327 triliun yang baru terealisasi 12,4% — dimulai dari gampong Aceh. Tim Youser_Root, UIN Ar-Raniry.">
+<meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjMwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBGM0QyMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxQjZCM0EiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9Imdsb3ciIGN4PSI1MCUiIGN5PSI0NSUiIHI9IjU1JSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNDOUE4NEMiIHN0b3Atb3BhY2l0eT0iMC4xOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNDOUE4NEMiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZ2xvd0JMIiBjeD0iMCUiIGN5PSIxMDAlIiByPSI1MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMkQ4QTUyIiBzdG9wLW9wYWNpdHk9IjAuMyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyRDhBNTIiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICA8L2RlZnM+CgogIDwhLS0gQmFja2dyb3VuZCAtLT4KICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MzAiIGZpbGw9InVybCgjYmcpIi8+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjMwIiBmaWxsPSJ1cmwoI2dsb3cpIi8+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjMwIiBmaWxsPSJ1cmwoI2dsb3dCTCkiLz4KCiAgPCEtLSBHZW9tZXRyaWMgb3JuYW1lbnQgY2lyY2xlcyAtLT4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjYwIiByPSIxODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTg0QyIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjA4Ii8+CiAgPGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iMTIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNDOUE4NEMiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4wNiIvPgogIDxjaXJjbGUgY3g9IjExNDAiIGN5PSI1NzAiIHI9IjIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQzlBODRDIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMDgiLz4KICA8Y2lyY2xlIGN4PSIxMTQwIiBjeT0iNTcwIiByPSIxNTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTg0QyIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjA2Ii8+CgogIDwhLS0gQXJhYmljIGxldHRlciDZhiB3YXRlcm1hcmsgLS0+CiAgPHRleHQgeD0iNjAwIiB5PSIyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiCiAgICBmb250LXNpemU9IjMyMCIgZmlsbD0iI0M5QTg0QyIgb3BhY2l0eT0iMC4wNiI+2YY8L3RleHQ+CgogIDwhLS0gR29sZCB0b3AgYm9yZGVyIGFjY2VudCAtLT4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI1IiBmaWxsPSIjQzlBODRDIiBvcGFjaXR5PSIwLjciLz4KCiAgPCEtLSBMZWZ0IGFjY2VudCBiYXIgLS0+CiAgPHJlY3QgeD0iMTAwIiB5PSIxNjAiIHdpZHRoPSI0IiBoZWlnaHQ9IjMxMCIgcng9IjIiIGZpbGw9IiNDOUE4NEMiIG9wYWNpdHk9IjAuNCIvPgoKICA8IS0tIE1haW4gbG9nbyBtYXJrIC0tPgogIDxyZWN0IHg9IjEyMiIgeT0iMTcwIiB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHJ4PSIxNiIgZmlsbD0iI0M5QTg0QyIgb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjQzlBODRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjE1OCIgeT0iMjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI0NCIgZmlsbD0iI0U4Qzk3QSI+2YY8L3RleHQ+CgogIDwhLS0gTlVBTlNZQSB3b3JkbWFyayAtLT4KICA8dGV4dCB4PSIyMTAiIHk9IjIyOCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsJ1RpbWVzIE5ldyBSb21hbicsc2VyaWYiCiAgICBmb250LXNpemU9IjU2IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0U4Qzk3QSIgbGV0dGVyLXNwYWNpbmc9IjMiPk5VQU5TWUE8L3RleHQ+CgogIDwhLS0gU3VidGl0bGUgLS0+CiAgPHRleHQgeD0iMjEwIiB5PSIyNjUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIKICAgIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNDOUE4NEMiIG9wYWNpdHk9IjAuOCIgbGV0dGVyLXNwYWNpbmc9IjEiPgogICAgTnVzYW50YXJhIEFuYWx5dGljcyBmb3IgU3lhcmlhaCBBc3NldHMKICA8L3RleHQ+CgogIDwhLS0gRGl2aWRlciBsaW5lIC0tPgogIDxyZWN0IHg9IjEwOCIgeT0iMjk1IiB3aWR0aD0iOTg0IiBoZWlnaHQ9IjEuNSIgZmlsbD0iI0M5QTg0QyIgb3BhY2l0eT0iMC4yIi8+CgogIDwhLS0gTWFpbiBoZWFkbGluZSAtLT4KICA8dGV4dCB4PSIxMDgiIHk9IjM1NSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsJ1RpbWVzIE5ldyBSb21hbicsc2VyaWYiCiAgICBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPgogICAgUGxhdGZvcm0gWklTV0FGIERpZ2l0YWwgZGFyaSBHYW1wb25nIGtlIE5hc2lvbmFsCiAgPC90ZXh0PgoKICA8IS0tIERlc2NyaXB0aW9uIC0tPgogIDx0ZXh0IHg9IjEwOCIgeT0iNDAwIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiCiAgICBmb250LXNpemU9IjIyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC42NSI+CiAgICBPZmZsaW5lLWZpcnN0IMK3IEFJIFNjb3JpbmcgTXVzdGFoaWsgwrcgVHJhbnNwYXJhbnNpIFB1YmxpayDCtyBQYXR1aCBSZWd1bGFzaQogIDwvdGV4dD4KCiAgPCEtLSBTdGF0cyBwaWxscyAtLT4KICA8IS0tIFBpbGwgMSAtLT4KICA8cmVjdCB4PSIxMDgiIHk9IjQzMCIgd2lkdGg9IjIyMCIgaGVpZ2h0PSI1OCIgcng9IjEyIiBmaWxsPSIjQzlBODRDIiBvcGFjaXR5PSIwLjEyIiBzdHJva2U9IiNDOUE4NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHRleHQgeD0iMjE4IiB5PSI0NTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0U4Qzk3QSI+UnAzMjcgVHJpbGl1bjwvdGV4dD4KICA8dGV4dCB4PSIyMTgiIHk9IjQ3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjU1Ij5Qb3RlbnNpIFpha2F0IE5hc2lvbmFsPC90ZXh0PgoKICA8IS0tIFBpbGwgMiAtLT4KICA8cmVjdCB4PSIzNDQiIHk9IjQzMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSI1OCIgcng9IjEyIiBmaWxsPSIjQzlBODRDIiBvcGFjaXR5PSIwLjEyIiBzdHJva2U9IiNDOUE4NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHRleHQgeD0iNDM0IiB5PSI0NTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0U4Qzk3QSI+ODcsNiUgR2FwPC90ZXh0PgogIDx0ZXh0IHg9IjQzNCIgeT0iNDc1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNTUiPkJlbHVtIFRlcmVhbGlzYXNpPC90ZXh0PgoKICA8IS0tIFBpbGwgMyAtLT4KICA8cmVjdCB4PSI1NDAiIHk9IjQzMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSI1OCIgcng9IjEyIiBmaWxsPSIjQzlBODRDIiBvcGFjaXR5PSIwLjEyIiBzdHJva2U9IiNDOUE4NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHRleHQgeD0iNjMwIiB5PSI0NTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0U4Qzk3QSI+Qm90dG9tLVVwPC90ZXh0PgogIDx0ZXh0IHg9IjYzMCIgeT0iNDc1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNTUiPkRhcmkgR2FtcG9uZyBrZSBQdXNhdDwvdGV4dD4KCiAgPCEtLSBSaWdodCBzaWRlIHRhZyAtLT4KICA8cmVjdCB4PSI5MjAiIHk9IjQzMCIgd2lkdGg9IjE3MiIgaGVpZ2h0PSI1OCIgcng9IjEyIiBmaWxsPSIjMUI2QjNBIiBzdHJva2U9IiMyRDhBNTIiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHRleHQgeD0iMTAwNiIgeT0iNDUzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNFOEM5N0EiIGxldHRlci1zcGFjaW5nPSIxIj5ESUdEQVlBIFggMjAyNjwvdGV4dD4KICA8dGV4dCB4PSIxMDA2IiB5PSI0NzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC42Ij5UaW0gWW91c2VyX1Jvb3Q8L3RleHQ+CgogIDwhLS0gRm9vdGVyIC0tPgogIDxyZWN0IHg9IjAiIHk9IjU5NSIgd2lkdGg9IjEyMDAiIGhlaWdodD0iMzUiIGZpbGw9IiMwQTJBMTciIG9wYWNpdHk9IjAuNiIvPgogIDx0ZXh0IHg9IjYwMCIgeT0iNjE3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIKICAgIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjQ1IiBsZXR0ZXItc3BhY2luZz0iMSI+CiAgICBVSU4gQXItUmFuaXJ5IEJhbmRhIEFjZWggwrcgUHVzYXQgSW5vdmFzaSBEaWdpdGFsIEluZG9uZXNpYSAoUElESSkgwrcgQXN0YSBDaXRhIE5vLiA2CiAgPC90ZXh0Pgo8L3N2Zz4K">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="NUANSYA">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NUANSYA — Platform ZISWAF Digital dari Gampong ke Nasional">
+<meta name="twitter:description" content="Ekosistem ZISWAF offline-first dengan AI Scoring Mustahik. Dari Gampong, untuk Indonesia.">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -1233,7 +1251,7 @@ nav {
   <div class="nav-logo">
     <div class="nav-logo-mark">ن</div>
     <div>
-      <div class="nav-logo-text">NUANSA</div>
+      <div class="nav-logo-text">NUANSYA</div>
       <span class="nav-logo-sub">Nusantara Analytics for Syariah Assets</span>
     </div>
   </div>
@@ -1258,7 +1276,7 @@ nav {
   </div>
 
   <h1 class="hero-title">
-    <span>NUANSA</span>
+    <span>NUANSYA</span>
   </h1>
   <p class="hero-subtitle">Nusantara Analytics for Syariah Assets</p>
 
@@ -1286,7 +1304,7 @@ nav {
   </div>
 
   <div class="hero-cta">
-    <a href="#ecosystem" class="btn-primary">Lihat Ekosistem NUANSA ↓</a>
+    <a href="#ecosystem" class="btn-primary">Lihat Ekosistem NUANSYA ↓</a>
     <a href="#ai-demo" class="btn-secondary">Coba AI Scoring →</a>
   </div>
 
@@ -1338,10 +1356,10 @@ nav {
 <!-- ECOSYSTEM -->
 <section id="ecosystem">
   <div class="section-header fade-in">
-    <div class="section-label" style="color:var(--hijau);">Ekosistem NUANSA</div>
+    <div class="section-label" style="color:var(--hijau);">Ekosistem NUANSYA</div>
     <h2 class="section-title">Satu Portal, Dua Platform, Satu Ekosistem</h2>
     <p class="section-body">
-      NUANSA bukan sekadar aplikasi — ia adalah infrastruktur data ZISWAF
+      NUANSYA bukan sekadar aplikasi — ia adalah infrastruktur data ZISWAF
       yang terhubung dari gampong hingga nasional dalam satu ekosistem yang transparan dan patuh regulasi.
     </p>
   </div>
@@ -1350,7 +1368,7 @@ nav {
     <div class="eco-center">
       <div class="eco-portal">
         <div class="eco-portal-label">🌐 Portal Utama &amp; Transparansi Publik</div>
-        <div class="eco-portal-name">nuansa.id</div>
+        <div class="eco-portal-name">nuansya.id</div>
         <div class="eco-portal-desc">Pintu gerbang ekosistem · Data agregat publik · Sesuai standar keterbukaan BAZNAS</div>
       </div>
     </div>
@@ -1365,7 +1383,7 @@ nav {
           Mobile App · Android
         </div>
         <div class="eco-platform-icon">📱</div>
-        <div class="eco-platform-name">NUANSA untuk Amil</div>
+        <div class="eco-platform-name">NUANSYA untuk Amil</div>
         <div class="eco-platform-desc">
           Dirancang untuk amil gampong dan masjid. Bekerja dengan
           <em>progressive connectivity</em> — semua fitur aktif saat online,
@@ -1386,7 +1404,7 @@ nav {
       <div class="eco-platform web fade-in">
         <div class="eco-platform-badge">🖥️ Web App · Browser</div>
         <div class="eco-platform-icon">📊</div>
-        <div class="eco-platform-name">NUANSA untuk BAZNAS</div>
+        <div class="eco-platform-name">NUANSYA untuk BAZNAS</div>
         <div class="eco-platform-desc">
           Dashboard analitik untuk operator BAZNAS dari level
           Kecamatan hingga Nasional. Akses via browser — tidak perlu instalasi.
@@ -1411,7 +1429,7 @@ nav {
 <section id="alur">
   <div class="section-header fade-in">
     <div class="section-label" style="color:var(--hijau);">Alur Kerja</div>
-    <h2 class="section-title">Bagaimana NUANSA Bekerja</h2>
+    <h2 class="section-title">Bagaimana NUANSYA Bekerja</h2>
     <p class="section-body">
       Ikuti perjalanan data dari tangan amil di gampong Aceh
       hingga dashboard BAZNAS Nasional.
@@ -1444,8 +1462,8 @@ nav {
         <div class="flow-step-num">1</div>
         <div class="flow-step-icon">📲</div>
         <div class="flow-step-content">
-          <div class="flow-step-title">Unduh &amp; Login NUANSA App</div>
-          <div class="flow-step-desc">Pak Mustafa mengunduh NUANSA dari link yang dibagikan BAZNAS Banda Aceh. Login dengan akun amil yang sudah diverifikasi. Tidak perlu email — cukup nomor HP terdaftar.</div>
+          <div class="flow-step-title">Unduh &amp; Login NUANSYA App</div>
+          <div class="flow-step-desc">Pak Mustafa mengunduh NUANSYA dari link yang dibagikan BAZNAS Banda Aceh. Login dengan akun amil yang sudah diverifikasi. Tidak perlu email — cukup nomor HP terdaftar.</div>
         </div>
       </div>
 
@@ -1454,10 +1472,10 @@ nav {
         <div class="flow-step-icon">📝</div>
         <div class="flow-step-content">
           <div class="flow-step-title">Input Data Mustahik (Tanpa Internet)</div>
-          <div class="flow-step-desc">Listrik mati, internet tidak ada — tidak masalah. Pak Mustafa tetap input data warga yang datang. NUANSA menyimpan semua data terenkripsi di perangkatnya.</div>
+          <div class="flow-step-desc">Listrik mati, internet tidak ada — tidak masalah. Pak Mustafa tetap input data warga yang datang. NUANSYA menyimpan semua data terenkripsi di perangkatnya.</div>
           <div class="flow-step-screen">
             <div class="sim-header">
-              <span>NUANSA · Input Mustahik</span>
+              <span>NUANSYA · Input Mustahik</span>
               <span style="background:rgba(255,100,100,0.3);padding:2px 8px;border-radius:4px;font-size:10px;">🔴 Offline</span>
             </div>
             <div class="sim-body">
@@ -1513,7 +1531,7 @@ nav {
         <div class="flow-step-icon">🔄</div>
         <div class="flow-step-content">
           <div class="flow-step-title">Koneksi Tersedia → Auto-Sync ke BAZNAS</div>
-          <div class="flow-step-desc">Saat Pak Mustafa pulang ke rumah dan terhubung WiFi, NUANSA otomatis menyinkronkan semua data yang terinput hari ini ke server BAZNAS Kota Banda Aceh. Tidak ada yang terlewat.</div>
+          <div class="flow-step-desc">Saat Pak Mustafa pulang ke rumah dan terhubung WiFi, NUANSYA otomatis menyinkronkan semua data yang terinput hari ini ke server BAZNAS Kota Banda Aceh. Tidak ada yang terlewat.</div>
           <div class="flow-step-screen" style="background:var(--bg-section);">
             <div style="display:flex;align-items:center;gap:10px;padding:8px;">
               <span style="font-size:20px;">✅</span>
@@ -1549,7 +1567,7 @@ nav {
         <div class="flow-step-icon">🖥️</div>
         <div class="flow-step-content">
           <div class="flow-step-title">Buka Dashboard di Browser</div>
-          <div class="flow-step-desc">Bu Rahmawati membuka nuansa.id/dashboard di laptop kantornya. Login dengan akun operator BAZNAS Kota. Dashboard menampilkan data real-time dari seluruh gampong di Banda Aceh.</div>
+          <div class="flow-step-desc">Bu Rahmawati membuka nuansya.id/dashboard di laptop kantornya. Login dengan akun operator BAZNAS Kota. Dashboard menampilkan data real-time dari seluruh gampong di Banda Aceh.</div>
         </div>
       </div>
 
@@ -1600,7 +1618,7 @@ nav {
         <div class="flow-step-icon">📤</div>
         <div class="flow-step-content">
           <div class="flow-step-title">Ekspor Laporan Compatible SIMBA</div>
-          <div class="flow-step-desc">Satu klik — NUANSA menghasilkan file CSV yang langsung compatible dengan format SIMBA BAZNAS Pusat. Tidak perlu rekap manual. Tidak perlu khawatir format salah.</div>
+          <div class="flow-step-desc">Satu klik — NUANSYA menghasilkan file CSV yang langsung compatible dengan format SIMBA BAZNAS Pusat. Tidak perlu rekap manual. Tidak perlu khawatir format salah.</div>
           <div class="flow-step-screen" style="text-align:center;padding:20px;">
             <div style="font-size:32px;margin-bottom:8px;">📥</div>
             <div style="font-weight:700;color:var(--hijau);margin-bottom:4px;">Laporan SIMBA Siap Diunduh</div>
@@ -1631,8 +1649,8 @@ nav {
         <div class="flow-step-num">1</div>
         <div class="flow-step-icon">🌐</div>
         <div class="flow-step-content">
-          <div class="flow-step-title">Buka nuansa.id — Tanpa Login</div>
-          <div class="flow-step-desc">Portal transparansi publik NUANSA bisa diakses oleh siapa saja tanpa perlu mendaftar. Data yang ditampilkan adalah agregat — tidak ada data personal mustahik yang terekspos.</div>
+          <div class="flow-step-title">Buka nuansya.id — Tanpa Login</div>
+          <div class="flow-step-desc">Portal transparansi publik NUANSYA bisa diakses oleh siapa saja tanpa perlu mendaftar. Data yang ditampilkan adalah agregat — tidak ada data personal mustahik yang terekspos.</div>
         </div>
       </div>
 
@@ -1756,11 +1774,11 @@ nav {
         <div class="portal-dot r"></div>
         <div class="portal-dot y"></div>
         <div class="portal-dot g"></div>
-        <div class="portal-url">nuansa.id · Portal Transparansi Publik</div>
+        <div class="portal-url">nuansya.id · Portal Transparansi Publik</div>
       </div>
       <div class="portal-content">
         <div class="portal-hero">
-          <div class="portal-hero-title">NUANSA · Aceh</div>
+          <div class="portal-hero-title">NUANSYA · Aceh</div>
           <div class="portal-hero-sub">Data ZISWAF Publik · Diperbarui Real-time</div>
         </div>
         <div class="portal-kpi-row">
@@ -1805,7 +1823,7 @@ nav {
       <div class="section-label" style="color:var(--hijau);">Transparansi Publik</div>
       <h2 class="section-title">Dana Umat Dikelola Secara Terbuka</h2>
       <p class="section-body" style="margin-bottom:24px;">
-        Portal nuansa.id dapat diakses siapa saja tanpa login.
+        Portal nuansya.id dapat diakses siapa saja tanpa login.
         Masyarakat bisa memantau realisasi zakat di wilayahnya secara real-time —
         membangun kepercayaan yang selama ini menjadi hambatan utama rendahnya partisipasi muzakki.
       </p>
@@ -1919,7 +1937,7 @@ nav {
     Dari <span>Gampong</span>,<br>untuk Indonesia
   </div>
   <p class="closing-sub fade-in">
-    NUANSA dibangun oleh anak Aceh, dari masalah yang kami saksikan sendiri,
+    NUANSYA dibangun oleh anak Aceh, dari masalah yang kami saksikan sendiri,
     untuk mengoptimalkan potensi dana umat terbesar di dunia.
   </p>
 
